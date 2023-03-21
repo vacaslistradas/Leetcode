@@ -17,11 +17,11 @@ class Solution(object):
             head = head.next
         if counter == 1:
             top1 = None
-        elif n == 1:
+        elif n == 1: // if n == 1, remove last element of the linked list
             for i in range(counter - 2):
                 top = top.next
             top.next = None 
-        elif n  == counter:
+        elif n  == counter: // if n == length of linked list, remove first element of linked list
             top1 = top.next   
         else:
             for i in range(counter - n - 1):
