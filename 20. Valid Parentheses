@@ -1,0 +1,21 @@
+class Solution(object):
+    def isValid(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        
+        while len(s)>0:
+            parentheses = s.find("()")
+            if parentheses != -1:
+                s = s.replace("()", "")
+            brackets = s.find("[]")
+            if brackets != -1:
+                s = s.replace("[]", "")
+            braces = s.find("{}")
+            if braces != -1:
+                s = s.replace("{}", "")
+            if braces == -1 and brackets == -1 and parentheses == -1:
+                return False
+            if len(s) == 0:
+                return True
