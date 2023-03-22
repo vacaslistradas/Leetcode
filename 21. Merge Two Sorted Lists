@@ -10,13 +10,16 @@ class Solution(object):
         :type list2: Optional[ListNode]
         :rtype: Optional[ListNode]
         """
+        # Initiating dummy ListNode
         top = cur = ListNode(0)
-
+    
+        # If either of the lists are empty, return the other list
         if list1 == None:
             return list2
         elif list2 == None:
             return list1
         
+        # While both lists still have content, compare the value of the top two nodes and add to dummy ListNode
         while list1 and list2:
             if list1.val>list2.val:
                 cur.next = list2
@@ -27,6 +30,7 @@ class Solution(object):
                 list1 = list1.next
                 cur = cur.next
                 
+        # If there are elements left in any list, append them to the end of dummy Listnode        
         if list1:
             cur.next = list1
         elif list2:
